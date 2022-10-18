@@ -62,11 +62,12 @@ const Sidebar = () => {
                     cookiePolicy="single-host-origin"
                   />
                 </div>
-                <Discover />
-                <SuggestedAccounts />
-                <Footer />
               </div>
             )}
+
+            <Discover />
+            <SuggestedAccounts />
+            <Footer />
           </div>
         </div>
       )}

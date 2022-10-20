@@ -3,7 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['fadeawayworld.net']
+    domains: [
+      'fadeawayworld.net', 
+      'lh3.googleusercontent.com',
+    ]
   }
 }
 

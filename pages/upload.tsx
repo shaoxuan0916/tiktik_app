@@ -8,6 +8,7 @@ import { client } from "../utils/client"
 import { SanityAssetDocument } from "@sanity/client"
 import { topics } from "../utils/constants"
 import { GiRoundStrawBale } from "react-icons/gi"
+import { BASE_URL } from "../utils"
 
 const upload = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
@@ -65,7 +66,7 @@ const upload = () => {
         topic: category,
       }
 
-      await axios.post("http://localhost:3000/api/post", document)
+      await axios.post(`${BASE_URL}/api/post`, document)
 
       router.push("/")
     }

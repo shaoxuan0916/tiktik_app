@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { NextPage } from "next"
 import { VideoType } from "../types"
 import { HiVolumeUp, HiVolumeOff } from "react-icons/hi"
@@ -28,6 +28,12 @@ const VideoCard: NextPage<IVideoCardProps> = ({ post }) => {
     }
   }
 
+  useEffect(() => {
+    if (videoRef?.current) {
+      videoRef.current.muted = muted
+    }
+  }, [muted])
+
   return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
       <div>
@@ -35,14 +41,20 @@ const VideoCard: NextPage<IVideoCardProps> = ({ post }) => {
           <div className="md:w-16 md:h-16 w-10 h-10 ">
             <Link href="/ ">
               <>
-                <Image
+                <img
+                  src={post.postedBy.image}
+                  alt="profile photo"
+                  className="w-[40px] h-[40px] md:w-[62px] md:h-[62px] rounded-full layout-reponsive"
+                />
+
+                {/* <Image
                   width={62}
                   height={62}
                   className="rounded-full"
                   src={post.postedBy.image}
                   alt="profile photo"
                   layout="responsive"
-                />
+                /> */}
               </>
             </Link>
           </div>

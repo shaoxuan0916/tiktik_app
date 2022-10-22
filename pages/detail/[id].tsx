@@ -106,7 +106,7 @@ const Detail = ({ postDetails }: IDetailProps) => {
           </div>
         </div>
 
-        <div className="absolute botoom-5 lg:bottom-10 right:5 lg:right-10 cursor-pointer">
+        <div className="absolute bottom-5 lg:bottom-10 right:6 lg:right-10 cursor-pointer">
           {muted ? (
             <button onClick={() => setMuted(false)}>
               <HiVolumeOff className="text-white bg-black/20 rounded-full p-[2px] text-2xl lg:text-4xl" />
@@ -128,7 +128,7 @@ const Detail = ({ postDetails }: IDetailProps) => {
                   <img
                     src={post.postedBy.image}
                     alt="profile photo"
-                    className="w-[48px] h-[48px] md:w-[62px] md:h-[62px] rounded-full layout-reponsive"
+                    className="w-[48px] h-[48px] md:w-[62px] md:h-[62px] rounded-full layout-reponsive object-cover"
                   />
                   {/* <Image
                     width={62}

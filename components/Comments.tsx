@@ -39,41 +39,35 @@ const Comments = ({
         {comments?.length ? (
           <div className="">
             {comments.map((item, index) => (
-              <>
+              <div key={index}>
                 {allUsers.map(
-                  (user: IUser) =>
+                  (user: IUser, index: number) =>
                     user._id === (item.postedBy._id || item.postedBy._ref) && (
                       <div className="p-2 items-center" key={index}>
                         <Link href={`/profile/${user._id}`}>
                           <div className="flex items-start gap-3">
-                            <div className="w-8 h-8">
+                            <div className="w-12 h-12">
                               <img
                                 src={user.image}
                                 alt="profile photo"
-                                className="w-[32px] h-[32px] rounded-full layout-reponsive"
+                                className="w-[40px] h-[40px] rounded-full layout-reponsive object-cover"
                               />
                             </div>
 
-                            <div className="hidden xl:block">
+                            <div className="">
                               <p className="flex gap-1 items-center text-md font-bold text-primary lowercase">
                                 {user.userName.replaceAll(" ", "")}{" "}
                                 <GoVerified className="text-blue-400" />
                               </p>
 
-                              <p className="capitalize text-gray text-xs">
-                                {user.userName}
-                              </p>
+                              <p>{item.comment}</p>
                             </div>
                           </div>
                         </Link>
-
-                        <div className="mt-2">
-                          <p>{item.comment}</p>
-                        </div>
                       </div>
                     )
                 )}
-              </>
+              </div>
             ))}
           </div>
         ) : (

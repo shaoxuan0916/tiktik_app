@@ -26,7 +26,7 @@ const SuggestedAccounts = () => {
                 <img
                   src={user.image}
                   alt="profile photo"
-                  className="w-[32px] h-[32px] rounded-full layout-reponsive "
+                  className="w-[32px] h-[32px] rounded-full layout-reponsive object-cover"
                 />
               </div>
 

@@ -24,15 +24,26 @@ const Home: NextPage<IProps> = ({ videos }) => {
             <VideoCard post={video} key={video._id} />
           ))
         ) : (
-          <NoResults text="No Videos" />
+          <div className="mt-20">
+            <NoResults text="No Videos" />
+          </div>
         )}
       </div>
     </div>
   )
 }
 
-export const getServerSideProps = async () => {
-  const response = await axios.get(`${BASE_URL}/api/post`)
+export const getServerSideProps = async ({
+  query: { topic },
+}: {
+  query: { topic: string }
+}) => {
+  let response = null
+  if (topic) {
+    response = await axios.get(`${BASE_URL}/api/discover/${topic}`)
+  } else {
+    response = await axios.get(`${BASE_URL}/api/post`)
+  }
 
   return {
     props: {

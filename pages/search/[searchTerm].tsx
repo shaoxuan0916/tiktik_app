@@ -48,7 +48,7 @@ const Search = ({ videos }: { videos: VideoType[] }) => {
               <div className="md:mt-8 ">
                 {searchedAccounts.length > 0 ? (
                   searchedAccounts.map((user: IUser, index: number) => (
-                    <div className=" ">
+                    <div className=" " key={index}>
                       {" "}
                       <Link href={`/profile/${user._id}`}>
                         <div className="flex gap-3 font-semibold p-2 rounded-md cursor-pointer hover:bg-primary border-b-2 border-gray-200">

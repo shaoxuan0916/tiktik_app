@@ -10,7 +10,7 @@ import { topics } from "../utils/constants"
 import { GiRoundStrawBale } from "react-icons/gi"
 import { BASE_URL } from "../utils"
 
-const upload = () => {
+const Upload = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [wrongVideoType, setWrongVideoType] = useState<boolean>(false)
   const [videoAsset, setVideoAsset] = useState<SanityAssetDocument | undefined>(
@@ -184,4 +184,4 @@ const upload = () => {
   )
 }
 
-export default upload
+export default Upload

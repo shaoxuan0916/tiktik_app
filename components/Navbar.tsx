@@ -65,7 +65,11 @@ const Navbar = () => {
               </button>
             </Link>
 
-            <p className="text-md">{userProfile.userName}</p>
+            <img
+              src={userProfile.image}
+              alt="profile photo"
+              className="w-[40px] h-[40px] rounded-full cursor-pointer"
+            />
             {/* {userProfile.image && (
               <Link href="/">
                 <>
@@ -82,7 +86,7 @@ const Navbar = () => {
 
             <button
               type="button"
-              className="hover:bg-primary p-2 rounded-full shadow-lg"
+              className="hover:bg-primary p-1 rounded-full "
               onClick={() => {
                 googleLogout()
                 removeUser()
